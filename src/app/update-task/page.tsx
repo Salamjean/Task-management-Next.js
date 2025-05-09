@@ -60,7 +60,6 @@ export default function UpdateTaskPage() {
 
   return (
     <div className="min-h-screen relative bg-gradient-to-br from-gray-900 to-gray-800">
-      {/* Image de fond avec overlay */}
       <div className="absolute inset-0">
         <Image
           src="/accueil.jpg"

@@ -35,7 +35,6 @@ export default function DeleteTaskPage() {
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
       <div className="relative w-full max-w-md">
-        {/* Image de fond avec overlay */}
         <div className="absolute inset-0">
           <Image
             src="/accueil.jpg"
@@ -47,8 +46,6 @@ export default function DeleteTaskPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/50 to-purple-900/50 rounded-2xl"></div>
         </div>
-
-        {/* Contenu du pop-up */}
         <div className="relative backdrop-blur-sm bg-white/10 p-8 rounded-2xl shadow-2xl border border-white/20">
           <div className="text-center mb-6">
             <div className="w-16 h-16 mx-auto mb-4 bg-red-500/20 rounded-full flex items-center justify-center">
