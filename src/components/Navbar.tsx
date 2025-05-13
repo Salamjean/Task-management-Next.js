@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <nav className="bg-blue-600 text-white p-4 shadow-md">
       <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-xl font-bold">Todo App</h1>
+        <h1 className="text-xl font-bold"><Link href="/">Todo App</Link></h1>
         <div className="flex space-x-4">
           <Link 
             href="/create-task" 

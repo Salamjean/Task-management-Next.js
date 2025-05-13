@@ -29,7 +29,7 @@ export default function TodoForm({ onAdd, initialTodo }: ITodoFormProps) {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="space-y-2">
-        <label htmlFor="title" className="block text-lg text-gray-200 font-medium">
+        <label htmlFor="title" className="block text-lg text-black font-medium">
           Titre de la tâche
         </label>
         <input
@@ -38,23 +38,23 @@ export default function TodoForm({ onAdd, initialTodo }: ITodoFormProps) {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Entrez le titre de votre tâche"
-          className="w-full p-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+          className="w-full p-4 bg-white/5 border border-black rounded-xl text-black  placeholder-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
           required
         />
       </div>
 
       <div className="space-y-2">
-        <label htmlFor="status" className="block text-lg text-gray-200 font-medium">
+        <label htmlFor="status" className="block text-lg text-black font-medium">
           Statut
         </label>
         <select
           id="status"
           value={completed ? "completed" : "pending"}
           onChange={(e) => setCompleted(e.target.value === "completed")}
-          className="w-full p-4 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+          className="w-full p-4 bg-white/5 border border-black rounded-xl text-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
         >
-          <option value="pending" className="bg-gray-800">En cours</option>
-          <option value="completed" className="bg-gray-800">Terminé</option>
+          <option value="pending" className="bg-gray-200">En cours</option>
+          <option value="completed" className="bg-gray-200">Terminé</option>
         </select>
       </div>
 
@@ -73,7 +73,7 @@ export default function TodoForm({ onAdd, initialTodo }: ITodoFormProps) {
         <button
           type="button"
           onClick={() => window.history.back()}
-          className="flex-1 bg-white/10 backdrop-blur-sm text-white border border-white/20 px-6 py-4 rounded-xl text-lg font-semibold hover:bg-white/20 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+          className="flex-1 bg-gray-200 backdrop-blur-sm text-black border border-white/20 px-6 py-4 rounded-xl text-lg font-semibold hover:bg-gray-400 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
         >
           <span className="flex items-center justify-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">

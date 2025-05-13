@@ -39,7 +39,6 @@ export default function TasksPage() {
 
   return (
     <>
-      <Navbar/>
       <div className="min-h-screen relative bg-gradient-to-br from-gray-900 to-gray-800">
         <div className="absolute inset-0">
           <Image
@@ -55,11 +54,12 @@ export default function TasksPage() {
 
         <main className="relative z-10 container mx-auto px-4 py-12">
           <div className="max-w-5xl mx-auto">
-            <div className="backdrop-blur-sm bg-white/10 p-8 rounded-2xl shadow-2xl border border-white/20">
+            <div className="backdrop-blur-sm bg-white p-8 rounded-2xl shadow-2xl border border-white/20">
               <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-8">
-                <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent text-center sm:text-left">
+                <h1 className="text-3xl font-bold bg-black from-blue-400 to-purple-500 bg-clip-text text-transparent text-center sm:text-left">
                   Gestion des Tâches
                 </h1>
+                
                 <button
                   onClick={handleAddTodo}
                   className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-xl text-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-2"
@@ -74,7 +74,7 @@ export default function TasksPage() {
               <div className="rounded-xl overflow-hidden border border-white/10">
                 <div className="overflow-x-auto">
                   <table className="min-w-full divide-y divide-white/10">
-                    <thead className="bg-gradient-to-r from-blue-600/50 to-purple-600/50">
+                    <thead className="bg-gradient-to-r from-blue-600/100 to-blue-600/100">
                       <tr>
                         <th className="py-4 px-6 text-center text-white font-semibold text-sm uppercase tracking-wider w-1/2">Titre</th>
                         <th className="py-4 px-6 text-center text-white font-semibold text-sm uppercase tracking-wider w-1/4">Statut</th>

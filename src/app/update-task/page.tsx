@@ -71,12 +71,10 @@ export default function UpdateTaskPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900/50 to-purple-900/50"></div>
       </div>
-
-      <Navbar/>
       <div className="relative z-10 container mx-auto px-4 py-12">
         <div className="max-w-2xl mx-auto">
-          <div className="backdrop-blur-sm bg-white/10 p-8 rounded-2xl shadow-2xl border border-white/20">
-            <h1 className="text-3xl font-bold mb-8 text-white text-center bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+          <div className="backdrop-blur-sm bg-white p-8 rounded-2xl shadow-2xl border border-white/20">
+            <h1 className="text-3xl font-bold mb-8 text-black text-center ">
               Modifier la tâche
             </h1>
             <TodoForm 
