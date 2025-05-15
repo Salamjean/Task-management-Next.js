@@ -81,7 +81,7 @@ export default function TasksPage() {
                         <th className="py-4 px-6 text-center text-white font-semibold text-sm uppercase tracking-wider w-1/4">Actions</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-white/10">
+                    <tbody className="divide-y divide-black">
                       {todos.map((todo) => (
                         <TodoItem
                           key={todo.id}
