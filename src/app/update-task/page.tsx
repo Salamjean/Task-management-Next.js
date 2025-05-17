@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from 'react';
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { getTodoById, updateTodo } from "@/geteway/todo";
@@ -7,7 +8,7 @@ import TodoForm from "@/components/TodoForm";
 import { ITodo } from "@/interfaces/todo";
 import Image from "next/image";
 
-export default function UpdateTaskPage() {
+function UpdateTaskContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const id = Number(searchParams.get('id'));
@@ -84,5 +85,19 @@ export default function UpdateTaskPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function UpdateTaskPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen relative bg-gradient-to-br from-gray-900 to-gray-800">
+        <div className="relative z-10 flex items-center justify-center min-h-screen">
+          <div className="text-white text-xl">Chargement des paramètres...</div>
+        </div>
+      </div>
+    }>
+      <UpdateTaskContent />
+    </Suspense>
   );
 }
