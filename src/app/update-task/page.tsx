@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { getTodoById, updateTodo } from "@/geteway/todo";
 import TodoForm from "@/components/TodoForm";
 import { ITodo } from "@/interfaces/todo";
-import Navbar from "@/components/Navbar";
 import Image from "next/image";
 
 export default function UpdateTaskPage() {

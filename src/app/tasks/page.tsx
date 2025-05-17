@@ -3,9 +3,8 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { ITodo } from "@/interfaces/todo";
-import { getTodos, toggleTodo, deleteTodo } from "@/geteway/todo";
+import { getTodos, toggleTodo } from "@/geteway/todo";
 import TodoItem from "@/components/TodoItem";
-import Navbar from "@/components/Navbar";
 import Image from "next/image";
 
 export default function TasksPage() {

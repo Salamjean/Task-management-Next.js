@@ -3,7 +3,6 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { addTodo } from "@/geteway/todo";
-import Navbar from "@/components/Navbar";
 import Image from "next/image";
 
 export default function CreateTaskPage() {
