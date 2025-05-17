@@ -44,6 +44,7 @@ export default function TodoList() {
             todo={todo}
             onToggle={handleToggleTodo}
             onDelete={handleDeleteTodo}
+            onEdit={() => {}}
           />
         ))}
       </div>
