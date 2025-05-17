@@ -10,15 +10,19 @@ function DeleteTaskContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const id = Number(searchParams.get('id'));
-  const [isOpen, setIsOpen] = useState(true);
   const [isDeleting, setIsDeleting] = useState(false);
 
-  const handleDelete = () => {
+  const handleDelete = async () => {
     setIsDeleting(true);
-    setTimeout(() => {
-      if (id) deleteTodo(id);
+    try {
+      if (id) {
+        await deleteTodo(id);
+      }
       router.push('/tasks');
-    }, 1000);
+    } catch (error) {
+      console.error("Erreur lors de la suppression:", error);
+      setIsDeleting(false);
+    }
   };
 
   const handleCancel = () => {
@@ -32,6 +36,7 @@ function DeleteTaskContent() {
 
   return (
     <div className="min-h-screen relative bg-gradient-to-br from-gray-900 to-gray-800">
+      {/* Background */}
       <div className="absolute inset-0">
         <Image
           src="/accueil.jpg"
@@ -44,32 +49,33 @@ function DeleteTaskContent() {
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900/50 to-purple-900/50"></div>
       </div>
 
-      <Dialog
-        open={isOpen}
+      {/* Confirmation Dialog */}
+      <Dialog 
+        open={true}
         onClose={handleCancel}
         className="relative z-50"
       >
-        <div className="fixed inset-0 bg-black/30" />
+        <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
         <div className="fixed inset-0 flex items-center justify-center p-4">
           <Dialog.Panel className="w-full max-w-md rounded-2xl bg-white p-6 backdrop-blur-sm">
             <Dialog.Title className="text-2xl font-bold text-gray-900">
               Confirmer la suppression
             </Dialog.Title>
             <Dialog.Description className="mt-2 text-gray-600">
-              Êtes-vous sûr de vouloir supprimer cette tâche ? Cette action est irréversible.
+              Êtes-vous sûr de vouloir supprimer cette tâche définitivement ?
             </Dialog.Description>
 
             <div className="mt-6 flex justify-end space-x-4">
               <button
                 onClick={handleCancel}
-                className="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg"
+                className="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
                 disabled={isDeleting}
               >
                 Annuler
               </button>
               <button
                 onClick={handleDelete}
-                className={`px-4 py-2 rounded-lg ${
+                className={`px-4 py-2 rounded-lg transition-colors ${
                   isDeleting
                     ? 'bg-gray-400 cursor-not-allowed'
                     : 'bg-red-500 text-white hover:bg-red-600'
@@ -85,7 +91,7 @@ function DeleteTaskContent() {
                     Suppression...
                   </span>
                 ) : (
-                  'Confirmer'
+                  'Supprimer'
                 )}
               </button>
             </div>
@@ -93,6 +99,7 @@ function DeleteTaskContent() {
         </div>
       </Dialog>
 
+      {/* Loading Overlay */}
       {isDeleting && (
         <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/50">
           <div className="text-white text-xl flex items-center">
