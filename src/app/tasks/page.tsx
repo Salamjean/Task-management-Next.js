@@ -47,7 +47,7 @@ export default function TasksPage() {
       if (todo) {
         router.push(`/tasks?status=success&message=La tâche "${todo.title}" a été ${todo.completed ? 'mise en cours' : 'marquée comme terminée'}&title=${todo.completed ? 'Tâche mise en cours' : 'Tâche terminée'}`);
       }
-    } catch (error) {
+    } catch {
       router.push('/tasks?status=error&message=Une erreur est survenue lors de la modification du statut de la tâche&title=Erreur');
     }
   };
